@@ -35,8 +35,8 @@ impl<const M: u32> Deref for Mod<M> {
     }
 }
 
-///数値型からの変換
-/// #example
+/// 数値型からの変換
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -54,8 +54,8 @@ where
     }
 }
 
-///加算
-/// #example
+/// 加算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -71,8 +71,8 @@ impl<const M: u32> std::ops::Add for Mod<M> {
     }
 }
 
-///加算代入
-/// #example
+/// 加算代入
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
@@ -85,8 +85,8 @@ impl<const M: u32> std::ops::AddAssign for Mod<M> {
     }
 }
 
-///減算
-/// #example
+/// 減算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -101,8 +101,8 @@ impl<const M: u32> std::ops::Sub for Mod<M> {
     }
 }
 
-///減算代入
-/// #example
+/// 減算代入
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
@@ -115,8 +115,8 @@ impl<const M: u32> std::ops::SubAssign for Mod<M> {
     }
 }
 
-///乗算
-/// #example
+/// 乗算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -132,8 +132,8 @@ impl<const M: u32> std::ops::Mul for Mod<M> {
     }
 }
 
-///乗算代入
-/// #example
+/// 乗算代入
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
@@ -146,8 +146,8 @@ impl<const M: u32> std::ops::MulAssign for Mod<M> {
     }
 }
 
-///除算
-/// #example
+/// 除算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -162,8 +162,8 @@ impl<const M: u32> std::ops::Div for Mod<M> {
     }
 }
 
-///除算代入
-/// #example    
+/// 除算代入
+///   
 /// ```
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
@@ -176,8 +176,8 @@ impl<const M: u32> std::ops::DivAssign for Mod<M> {
     }
 }
 
-///数値型との加算
-/// #example
+/// 数値型との加算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -196,8 +196,8 @@ where
     }
 }
 
-///数値型との減算
-/// #example
+/// 数値型との減算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -216,8 +216,8 @@ where
     }
 }
 
-///数値型との乗算
-/// #example
+/// 数値型との乗算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -236,8 +236,8 @@ where
     }
 }
 
-///数値型との除算
-/// #example
+/// 数値型との除算
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -245,7 +245,6 @@ where
 /// let c = a / b;
 /// ```
 /// 
-/// #panic
 /// baseと互いに素な数で除算しようとした場合、panicが発生します。
 /// when you try to divide by a number that is not coprime with the base, panic occurs.
 impl<const M: u32, T> std::ops::Div<T> for Mod<M>
@@ -262,7 +261,7 @@ where
 
 impl<const M: u32> Mod<M> {
     ///累乗
-    /// #example
+    ///
     /// ```
     /// use simple_mod_int::Mod;
     /// let a: Mod<17> = 10.into();
@@ -271,6 +270,7 @@ impl<const M: u32> Mod<M> {
     /// ```
     /// 
     /// 負の指数も指定可能
+    /// 
     /// 負の指数の場合、逆元を計算してから累乗します
     /// can specify negative exponent
     /// when you specify a negative exponent, it calculates the inverse and then raises it to the power
@@ -301,15 +301,14 @@ impl<const M: u32> Mod<M> {
         }
     }
 
-    ///逆元
-    /// #example
+    /// 逆元
+    ///
     /// ```
     /// use simple_mod_int::Mod;
     /// let a: Mod<17> = 10.into();
     /// let b = a.inv(); //12
     /// ```
     /// 
-    /// #panic
     /// 基底と互いに素でない場合、panicが発生します。
     /// when you try to calculate the inverse of a number that is not coprime with the base, panic occurs.
     pub fn inv(self) -> Self {
@@ -335,8 +334,8 @@ impl<const M: u32> Mod<M> {
     }
 }
 
-///等価
-/// #example
+/// 等価
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
@@ -349,8 +348,8 @@ impl<const M: u32> PartialEq for Mod<M> {
     }
 }
 
-///デバッグ
-/// #example
+/// デバッグ
+///
 /// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();

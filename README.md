@@ -3,7 +3,7 @@
 ```rust
 use simple_mod_int::Mod;
 
-let a: Mod<25> = 7.into();
+let mut a: Mod<25> = 7.into();
 let b: Mod<25> = 13.into();
 
 let sum = a + b;  // 20

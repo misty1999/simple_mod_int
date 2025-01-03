@@ -1,10 +1,11 @@
 [package]
 name = "simple_mod_int"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 keywords = ["mod", "int", "math", "integer"]
 description = "A simple modint library"
 license = "MIT"
+repository = "https://github.com/misty1999/simple_mod_int"
 
 [dependencies]
 num-traits = "0.2"
