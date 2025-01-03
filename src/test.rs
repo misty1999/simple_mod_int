@@ -132,6 +132,54 @@ mod test_simplified_notation {
     }
 }
 
+//数値に対する加算代入
+#[cfg(test)]
+mod test_add_assign_u32 {
+    use crate::Mod;
+    #[test]
+    fn test_add_assign_u32() {
+        let mut m: Mod<17> = 100.into();
+        m += 3;
+        assert_eq!(m.value, 103 % 17);
+    }
+}
+
+//数値に対する減算代入
+#[cfg(test)]
+mod test_sub_assign_u32 {
+    use crate::Mod;
+    #[test]
+    fn test_sub_assign_u32() {
+        let mut m: Mod<17> = 100.into();
+        m -= 3;
+        assert_eq!(m.value, 97 % 17);
+    }
+}
+
+//数値に対する乗算代入
+#[cfg(test)]
+mod test_mul_assign_u32 {
+    use crate::Mod;
+    #[test]
+    fn test_mul_assign_u32() {
+        let mut m: Mod<17> = 100.into();
+        m *= 3;
+        assert_eq!(m.value, 300 % 17);
+    }
+}
+
+//数値に対する除算代入
+#[cfg(test)]
+mod test_div_assign_u32 {
+    use crate::Mod;
+    #[test]
+    fn test_div_assign_u32() {
+        let mut m: Mod<17> = 100.into();
+        m /= 3;
+        assert_eq!(m.value, 5);
+    }
+}
+
 #[cfg(test)]
 mod test_u32 {
     use crate::Mod;

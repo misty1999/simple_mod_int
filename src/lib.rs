@@ -246,6 +246,7 @@ where
 /// ```
 /// 
 /// baseと互いに素な数で除算しようとした場合、panicが発生します。
+/// 
 /// when you try to divide by a number that is not coprime with the base, panic occurs.
 impl<const M: u32, T> std::ops::Div<T> for Mod<M>
 where
@@ -256,6 +257,74 @@ where
     fn div(self, other: T) -> Self::Output {
         let other_i64 = other.as_();
         self * Mod::from(other_i64).inv()
+    }
+}
+
+/// 数値型との加算代入
+///
+/// ```rust
+/// use simple_mod_int::Mod;
+/// let mut a: Mod<17> = 10.into();
+/// a += 20;
+/// ```
+impl<const M: u32, T> std::ops::AddAssign<T> for Mod<M>
+where
+    T: AsPrimitive<i64> + Copy
+{
+    fn add_assign(&mut self, other: T) {
+        let other_i64 = other.as_();
+        *self += Mod::from(other_i64);
+    }
+}
+
+/// 数値型との減算代入
+///
+/// ```rust
+/// use simple_mod_int::Mod;
+/// let mut a: Mod<17> = 10.into();
+/// a -= 20;
+/// ```
+impl<const M: u32, T> std::ops::SubAssign<T> for Mod<M>
+where
+    T: AsPrimitive<i64> + Copy
+{
+    fn sub_assign(&mut self, other: T) {
+        let other_i64 = other.as_();
+        *self -= Mod::from(other_i64);
+    }
+}
+
+/// 数値型との乗算代入
+///
+/// ```rust
+/// use simple_mod_int::Mod;
+/// let mut a: Mod<17> = 10.into();
+/// a *= 20;
+/// ```
+impl<const M: u32, T> std::ops::MulAssign<T> for Mod<M>
+where
+    T: AsPrimitive<i64> + Copy
+{
+    fn mul_assign(&mut self, other: T) {
+        let other_i64 = other.as_();
+        *self *= Mod::from(other_i64);
+    }
+}
+
+/// 数値型との除算代入
+///
+/// ```rust
+/// use simple_mod_int::Mod;
+/// let mut a: Mod<17> = 10.into();
+/// a /= 20;
+/// ```
+impl<const M: u32, T> std::ops::DivAssign<T> for Mod<M>
+where
+    T: AsPrimitive<i64> + Copy
+{
+    fn div_assign(&mut self, other: T) {
+        let other_i64 = other.as_();
+        *self /= Mod::from(other_i64);
     }
 }
 
@@ -272,6 +341,7 @@ impl<const M: u32> Mod<M> {
     /// 負の指数も指定可能
     /// 
     /// 負の指数の場合、逆元を計算してから累乗します
+    /// 
     /// can specify negative exponent
     /// when you specify a negative exponent, it calculates the inverse and then raises it to the power
     pub fn pow<T>(self, other: T) -> Self 
