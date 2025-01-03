@@ -318,6 +318,10 @@ where
 /// let mut a: Mod<17> = 10.into();
 /// a /= 20;
 /// ```
+/// 
+/// baseと互いに素な数で除算しようとした場合、panicが発生します。
+/// 
+/// when you try to divide by a number that is not coprime with the base, panic occurs.
 impl<const M: u32, T> std::ops::DivAssign<T> for Mod<M>
 where
     T: AsPrimitive<i64> + Copy
@@ -380,6 +384,7 @@ impl<const M: u32> Mod<M> {
     /// ```
     /// 
     /// 基底と互いに素でない場合、panicが発生します。
+    /// 
     /// when you try to calculate the inverse of a number that is not coprime with the base, panic occurs.
     pub fn inv(self) -> Self {
 
