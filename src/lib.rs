@@ -274,7 +274,7 @@ impl<const M: u32> Mod<M> {
     /// 負の指数の場合、逆元を計算してから累乗します
     /// can specify negative exponent
     /// when you specify a negative exponent, it calculates the inverse and then raises it to the power
-    fn pow<T>(self, other: T) -> Self 
+    pub fn pow<T>(self, other: T) -> Self 
     where
         T: AsPrimitive<i64> + Copy
     {
@@ -312,7 +312,7 @@ impl<const M: u32> Mod<M> {
     /// #panic
     /// 基底と互いに素でない場合、panicが発生します。
     /// when you try to calculate the inverse of a number that is not coprime with the base, panic occurs.
-    fn inv(self) -> Self {
+    pub fn inv(self) -> Self {
 
         if self.value == 0 {
             panic!("0 has no inverse");
