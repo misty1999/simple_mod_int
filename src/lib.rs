@@ -37,7 +37,7 @@ impl<const M: u32> Deref for Mod<M> {
 
 ///数値型からの変換
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// ```
@@ -56,7 +56,7 @@ where
 
 ///加算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -73,7 +73,7 @@ impl<const M: u32> std::ops::Add for Mod<M> {
 
 ///加算代入
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -87,7 +87,7 @@ impl<const M: u32> std::ops::AddAssign for Mod<M> {
 
 ///減算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -103,7 +103,7 @@ impl<const M: u32> std::ops::Sub for Mod<M> {
 
 ///減算代入
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -117,7 +117,7 @@ impl<const M: u32> std::ops::SubAssign for Mod<M> {
 
 ///乗算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -134,7 +134,7 @@ impl<const M: u32> std::ops::Mul for Mod<M> {
 
 ///乗算代入
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let mut a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -148,7 +148,7 @@ impl<const M: u32> std::ops::MulAssign for Mod<M> {
 
 ///除算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20.into();
@@ -178,7 +178,7 @@ impl<const M: u32> std::ops::DivAssign for Mod<M> {
 
 ///数値型との加算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20;
@@ -198,7 +198,7 @@ where
 
 ///数値型との減算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20;
@@ -218,7 +218,7 @@ where
 
 ///数値型との乗算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20;
@@ -238,7 +238,7 @@ where
 
 ///数値型との除算
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 20;
@@ -337,7 +337,7 @@ impl<const M: u32> Mod<M> {
 
 ///等価
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// let b: Mod<17> = 61.into();
@@ -351,7 +351,7 @@ impl<const M: u32> PartialEq for Mod<M> {
 
 ///デバッグ
 /// #example
-/// ```
+/// ```rust
 /// use simple_mod_int::Mod;
 /// let a: Mod<17> = 10.into();
 /// println!("{:?}", a); //Mod { value: 10 , mod: 17 }

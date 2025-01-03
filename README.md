@@ -1,6 +1,6 @@
 ### example
 
-```
+```rust
 use simple_mod_int::Mod;
 
 let a: Mod<25> = 7.into();
